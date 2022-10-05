@@ -32,4 +32,21 @@ public class J04TestPractice {
     private int bolumIslem(int x, int y) {
         return x/y;
     }
+
+    @Test
+    @DisplayName(" testException2 DisplayName ile verildi")
+    void testException3(){
+        int age=-5;
+
+        assertThrows(IllegalArgumentException.class,()->checkAge(age));
+    }
+
+    private void checkAge(int age) {//sart ile belirlenen bir age in test i yapildi
+        if (age<0){
+            throw new IllegalArgumentException();
+        }else{
+            System.out.println(age);
+        }
+    }
+
 }
